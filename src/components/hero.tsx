@@ -24,7 +24,6 @@ export const Hero = () => {
         development, tech trends, and the occasional offbeat insight. Let’s push
         some boundaries—because why not? 🚀
       </Text>
-      <Box height="1px" backgroundColor="white" marginTop="0.5rem" />
     </Container>
   );
 };

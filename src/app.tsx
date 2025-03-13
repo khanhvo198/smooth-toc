@@ -1,7 +1,14 @@
-import { Home } from "./pages/home";
+import { Box } from "@chakra-ui/react";
+import { Outlet } from "react-router";
+import { Navbar } from "./components/navbar";
 
 function App() {
-  return <Home />;
+  return (
+    <Box>
+      <Navbar />
+      <Outlet />
+    </Box>
+  );
 }
 
 export default App;

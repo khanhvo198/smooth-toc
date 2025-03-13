@@ -1,4 +1,4 @@
-import { Box, Container, Text } from "@chakra-ui/react";
+import { Box, Container, Link, Text } from "@chakra-ui/react";
 
 export const Navbar = () => {
   return (
@@ -11,7 +11,15 @@ export const Navbar = () => {
       backdropFilter="saturate(180%) blur(8px)"
     >
       <Container maxW="5xl">
-        <Text fontWeight="bold">What Are We Gonna Do Today?</Text>
+        <Link
+          href="/"
+          textDecoration="none"
+          color="white"
+          _hover={{ color: "white" }}
+          cursor="pointer"
+        >
+          <Text fontWeight="bold">What Are We Gonna Do Today?</Text>
+        </Link>
       </Container>
     </Box>
   );

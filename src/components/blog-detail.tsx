@@ -1,4 +1,5 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
+import * as motion from "motion/react-client";
 import { MainContent } from "./main-content";
 import { TableOfContent } from "./table-content";
 import { Title } from "./title";
@@ -11,15 +12,22 @@ export const BlogDetail = () => {
       marginBottom="3em"
       width={["100%", "100%", "90%"]}
     >
-      <Title />
-      <Flex gap={["0", "0", "1rem", "2rem"]}>
-        <MainContent />
-        <Box display={["none", "none", "block", "block"]}>
-          <Box pos="sticky" top="1.5rem">
-            <TableOfContent />
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+      >
+        <Title />
+        <Flex gap={["0", "0", "1rem", "2rem"]} marginTop="2rem">
+          <MainContent />
+          <Box display={["none", "none", "block", "block"]}>
+            <Box pos="sticky" top="1.5rem">
+              <TableOfContent />
+            </Box>
           </Box>
-        </Box>
-      </Flex>
+        </Flex>
+      </motion.div>
     </Container>
   );
 };
