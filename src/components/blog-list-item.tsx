@@ -24,6 +24,7 @@ export const BlogListItem: FC<BlogListItemProps> = ({ item }) => {
         textDecoration="none"
         color="white"
         href={item.slug}
+        outline="none"
       >
         {item.title}
       </Link>
