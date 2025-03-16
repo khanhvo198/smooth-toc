@@ -13,7 +13,7 @@ export const BlogListItem: FC<BlogListItemProps> = ({ item }) => {
       <Box height="1px" background="white" marginBottom="1rem" />
 
       <Flex justifyContent="space-between">
-        <Text>{item.createdAt.toLocaleDateString()}</Text>
+        <Text>{new Date(item.date).toDateString()}</Text>
         {item.tags && <TagList tagList={item.tags} />}
       </Flex>
       <Link

@@ -1,16 +1,32 @@
 import { Box } from "@chakra-ui/react";
-import { useEffect } from "react";
-import markdownContent from "../example.md?raw";
+import { FC, useEffect, useState } from "react";
 import { useVisibleSections } from "../hooks/use-visible-outline";
 import { useContentStore } from "../stores/content";
 import "./main-content.css";
 
-export const MainContent = () => {
+interface MainContentProps {
+  slug: string;
+}
+
+export const MainContent: FC<MainContentProps> = ({ slug }) => {
   const { dom, render } = useContentStore();
+  const [post, setPost] = useState<string>("");
 
   useEffect(() => {
-    render(markdownContent);
-  }, [render]);
+    const fetchPost = async () => {
+      const response = await fetch(
+        `${import.meta.env.VITE_BLOG_OBSIDIAN_ENDPOINT}/posts/${slug}`,
+      ).then((res) => res.json());
+
+      setPost(response.content);
+    };
+
+    fetchPost();
+  }, [slug]);
+
+  useEffect(() => {
+    render(post);
+  }, [render, post]);
 
   useVisibleSections();
 

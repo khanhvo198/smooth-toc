@@ -21,7 +21,6 @@ export const createRehypeHeading = (level: number) => {
         registHeadingRef(id, headingRef);
       }
     }, [id, registHeadingRef]);
-
     return (
       <HeadingTag ref={headingRef} id={id}>
         {children}

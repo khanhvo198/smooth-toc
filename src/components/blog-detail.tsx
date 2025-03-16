@@ -3,8 +3,10 @@ import * as motion from "motion/react-client";
 import { MainContent } from "./main-content";
 import { TableOfContent } from "./table-content";
 import { Title } from "./title";
+import { useParams } from "react-router";
 
 export const BlogDetail = () => {
+  const { slug } = useParams();
   return (
     <Container
       border="1px solid teal"
@@ -20,7 +22,7 @@ export const BlogDetail = () => {
       >
         <Title />
         <Flex gap={["0", "0", "1rem", "2rem"]} marginTop="2rem">
-          <MainContent />
+          <MainContent slug={slug!} />
           <Box display={["none", "none", "block", "block"]}>
             <Box pos="sticky" top="1.5rem">
               <TableOfContent />
