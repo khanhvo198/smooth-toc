@@ -24,7 +24,7 @@ export const BlogDetail = () => {
         <Flex gap={["0", "0", "1rem", "2rem"]} marginTop="2rem">
           <MainContent slug={slug!} />
           <Box display={["none", "none", "block", "block"]}>
-            <Box pos="sticky" top="1.5rem">
+            <Box pos="sticky" top="3rem">
               <TableOfContent />
             </Box>
           </Box>

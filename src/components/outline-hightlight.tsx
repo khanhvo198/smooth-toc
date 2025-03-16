@@ -34,8 +34,8 @@ export const OutlineHightlight: FC<OutlineHightlightProps> = ({ sections }) => {
       position="absolute"
       left="0.75rem"
       transition="color 0.2s ease-in-out"
-      top={top}
-      height={height - 8}
+      top={`${top}px`}
+      height={`${height}px`}
     />
   );
 };
