@@ -23,6 +23,10 @@ export const useVisibleSections = () => {
       }
     }
 
+    if (newVisibleSections.length === 0) {
+      return;
+    }
+
     const oldVisibleSections = sections
       .filter((s) => s.isVisible)
       .map((s) => s.id);

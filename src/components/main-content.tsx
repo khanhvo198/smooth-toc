@@ -16,9 +16,11 @@ export const MainContent: FC<MainContentProps> = ({ slug }) => {
     const fetchPost = async () => {
       const response = await fetch(
         `${import.meta.env.VITE_BLOG_OBSIDIAN_ENDPOINT}/posts/${slug}`,
-      ).then((res) => res.json());
+      );
 
-      setPost(response.content);
+      const post = await response.json();
+
+      setPost(post.content);
     };
 
     fetchPost();

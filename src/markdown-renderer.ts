@@ -1,4 +1,5 @@
 import * as jsxRuntime from "react/jsx-runtime";
+import rehypePrism from "rehype-prism-plus";
 import rehypeReact, { Components as JSXComponents } from "rehype-react";
 import rehypeSlug from "rehype-slug";
 import remarkFrontmatter from "remark-frontmatter";
@@ -30,7 +31,8 @@ export class MarkdownRenderer {
       .use(remarkRehype, {
         allowDangerousHtml: true,
       })
-      .use(rehypeSlug);
+      .use(rehypeSlug)
+      .use(rehypePrism);
     const renderer = rehypedRemark.use(rehypeReact, {
       Fragment: jsxRuntime.Fragment,
       jsx: jsxRuntime.jsx,
