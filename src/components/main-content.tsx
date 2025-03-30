@@ -33,7 +33,7 @@ export const MainContent: FC<MainContentProps> = ({ slug }) => {
   useVisibleSections();
 
   return (
-    <Box w={["100%", "100%", "70%", "70%"]}>
+    <Box w={["100%", "100%", "70%", "70%"]} id="container">
       <Box marginTop="1.5rem" marginBottom="1.5rem" textAlign="justify">
         {dom ? dom : "rendering..."}
       </Box>
